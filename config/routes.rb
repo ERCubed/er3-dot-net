@@ -10,12 +10,13 @@ Er3DotNet::Application.routes.draw do
   
   resources :users
 
-  resources :tasks
-
-  match "tag_cloud" => "tasks#tag_cloud"
   resources :companies
+
+  resources :tasks
   
   get 'tag/:tag', to: 'tasks#index', as: :tag
+  match "tag_cloud" => "tasks#tag_cloud"
+  match "resume" => "pages#resume"
   
   root :to => "pages#index"
 

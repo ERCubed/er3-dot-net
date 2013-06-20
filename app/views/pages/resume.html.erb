@@ -1,0 +1,18 @@
+
+<h2>Info</h2>
+
+<hr>
+<% @companies.each do |company| %>
+
+	<%= company.name %>
+	<br><%= company.job_title %>
+	<br><%= company.start_date.strftime("%B %Y") %> to <%= company.end_date.strftime("%B %Y") %>
+	
+	<ul>
+	<% Page.getCompanyTasks(company.id).each do |task| %>
+		<li><%= task.name %> <small>(<%= task.tag_list %>)</small></li>
+	<% end %>
+	</ul>
+	<p></p>
+
+<% end %>
