@@ -6,7 +6,7 @@
 
 	<%= company.name %>
 	<br><%= company.job_title %>
-	<br><%= company.start_date.strftime("%B %Y") %> to <%= company.end_date.strftime("%B %Y") %>
+	<br><%= company.start_date.strftime("%B %Y") %> to <%= Page.isCurrent(company.end_date) %>
 	
 	<ul>
 	<% Page.getCompanyTasks(company.id).each do |task| %>
