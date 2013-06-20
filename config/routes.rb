@@ -3,7 +3,7 @@ Er3DotNet::Application.routes.draw do
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   authenticated :user do
-    root :to => 'home#index'
+    root :to => 'pages#index'
   end
   
   devise_for :users
@@ -11,10 +11,12 @@ Er3DotNet::Application.routes.draw do
   resources :users
 
   resources :tasks
-  match "tag_cloud" => "tasks#tag_cloud"
 
+  match "tag_cloud" => "tasks#tag_cloud"
   resources :companies
   
-  root :to => "home#index"
+  get 'tag/:tag', to: 'tasks#index', as: :tag
+  
+  root :to => "pages#index"
 
 end

@@ -1,8 +1,16 @@
 class TasksController < ApplicationController
+  
+  before_filter :authenticate_user!, :except => :tag_cloud
+  
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = Task.all
+    
+    if params[:tag]
+      @tasks = Task.tagged_with(params[:tag])
+    else
+      @tasks = Task.all
+    end
 
     respond_to do |format|
       format.html # index.html.erb

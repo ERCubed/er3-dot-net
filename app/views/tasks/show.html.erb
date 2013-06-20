@@ -15,6 +15,11 @@
   <%= @task.importance %>
 </p>
 
+<p>
+  <b>Tags:</b>
+  <%= @task.tag_list %>
+</p>
+
 
 <%= link_to 'Edit', edit_task_path(@task) %> |
 <%= link_to 'Back', tasks_path %>
