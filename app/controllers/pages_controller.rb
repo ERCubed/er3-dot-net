@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   end
   
   def resume
-    @companies = Company.all
+    @companies = Company.order("end_date DESC")
     @tasks = Task.all
   end
   
