@@ -17,6 +17,8 @@ Er3DotNet::Application.routes.draw do
   get 'tag/:tag', to: 'tasks#index', as: :tag
   match "tag_cloud" => "tasks#tag_cloud"
   match "resume" => "pages#resume"
+  match "tumblr" => "pages#tumblr"
+  match "tumblr/upload" => "pages#tumblr_upload"
   
   root :to => "pages#index"
 

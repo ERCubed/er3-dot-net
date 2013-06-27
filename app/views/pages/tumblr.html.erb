@@ -1,0 +1,35 @@
+<h2>Tumblr Page...</h2>
+
+<hr />
+<% if !@tumblrClient %>
+	Tumblr does not recognize you. Check the code base and try again.
+<% else %>
+	You are logged in as <%= @tumblrClient.info["user"]["name"] %>! 
+	<hr />
+	<h3>Upload Something</h3>
+	
+	<%= form_tag(tumblr_upload_path, :multipart => true ) do %>
+		<p>
+			Title: <%= text_field_tag(:title)%> (For text posts only)
+		</p>
+		<p>
+			File to upload: <%= file_field_tag 'file' %>
+		</p>
+		<p>
+			Article: <%= text_area_tag 'article' %>
+		</p>
+		<p>
+			Content Type:<br />
+			<%= radio_button_tag(:content_type, "photo")%> <%= label_tag(:content_type_photo, "Photo")%><br /><br />
+			<%= radio_button_tag(:content_type, "video")%> <%= label_tag(:content_type_video, "Video")%><br /><br />
+			<%= radio_button_tag(:content_type, "text")%> <%= label_tag(:content_type_text, "Just a Text Article")%><br /><br />
+		</p>
+		<p>
+			<%= submit_tag 'Upload Content to Tumblr' %> 
+		</p>
+	<% end %>
+	
+<% end %>
+<hr />
+
+<%#= Tumblr::Client.new.posts("ercubed.tumblr.com", :type => "photo", :limit => 3) %>
