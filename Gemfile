@@ -30,7 +30,7 @@ gem "binding_of_caller", ">= 0.7.1", :group => :development, :platforms => [:mri
 gem 'rails_admin'
 gem 'acts-as-taggable-on'
 gem 'tumblr_client'
-#gem 'tumblife'
+gem 'twitter'
 gem 'oauth', :require => 'oauth/consumer'
 gem 'oauth-plugin'
 gem 'omniauth'

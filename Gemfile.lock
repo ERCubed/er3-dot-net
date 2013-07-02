@@ -219,6 +219,7 @@ GEM
     simple_form (2.1.0)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
+    simple_oauth (0.2.0)
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -238,6 +239,10 @@ GEM
       faraday_middleware (>= 0.8)
       json
       oauth
+    twitter (4.8.1)
+      faraday (~> 0.8, < 0.10)
+      multi_json (~> 1.0)
+      simple_oauth (~> 0.2)
     tzinfo (0.3.37)
     uglifier (2.1.1)
       execjs (>= 0.3.0)
@@ -280,4 +285,5 @@ DEPENDENCIES
   simple_form (>= 2.1.0)
   thin
   tumblr_client
+  twitter
   uglifier (>= 1.0.3)
