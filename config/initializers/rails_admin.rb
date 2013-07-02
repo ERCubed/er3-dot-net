@@ -28,6 +28,7 @@ RailsAdmin.config do |config|
 
   # Exclude specific models (keep the others):
   # config.excluded_models = ['Role', 'User']
+  config.excluded_models = ['Page']
 
   # Include specific models (exclude the others):
   # config.included_models = ['Role', 'User']
