@@ -1,13 +1,54 @@
-<h2>ERCubed dot net</h2>
-<h3>The techie side of things</h3>
 
-Links:
-<ul>
-	<li><%= link_to "Tag Cloud", tag_cloud_path %></li>
-	<li><%= link_to "Resume", resume_path %></li>
-</ul>
+<div class="row">
+	<div class="span2"></div>
+	<div class="span4">
+		<%= image_tag("ER3.jpg") %>
+	</div>
+	<div class="span4">
+			<h3>DOT NET</h3>
+			<h4>The Technical Side of ER Cubed...</h4>
+	</div>
+	<div class="span2"></div>
+</div>
+<div class="row">
+	<div class="span3 well">
+		General Information
+		<ul>
+			<li><%= link_to "About Me", about_path %></li>
+			<li><%= link_to "Programming Languages", languages_path %></li>
+			<li><%= link_to "Other Sites", othersites_path %></li>
+			<li><%= link_to "Contact", contact_path %></li>
+		</ul>
+	</div>
+	<div class="span3 well">
+		In Progress Content
+		<ul>
+			<li><%= link_to "Tag Cloud", tag_cloud_path %></li>
+			<li><%= link_to "Resume", resume_path %></li>
+		</ul>
+	</div>
+	<% if current_user %>
+		<% if current_user.has_role? :admin %>
+			<div class="span4 well">
+				Tests:
+				<ul>
+					<li><%= link_to "Tumblr Stuff", tumblr_path %></li>
+				</ul>
+			</div>	
+		<% else %>
+			<div class="span4">
+			</div>
+		<% end %>
+		<div class="span4">
+		</div>
+	<% else %>
+		<div class="span4">
+		</div>
+	<% end %>
+</div>
+	
 
-Tests:
-<ul>
-	<li><%= link_to "Tumblr Stuff", tumblr_path %></li>
-</ul>
+
+
+
+

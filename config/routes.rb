@@ -20,6 +20,11 @@ Er3DotNet::Application.routes.draw do
   match "tumblr" => "pages#tumblr"
   match "tumblr/upload" => "pages#tumblr_upload"
   
+  match "languages" => "pages#languages"
+  match "othersites" => "pages#othersites"
+  match "about" => "pages#about"
+  match "contact" => "pages#contact"
+  
   root :to => "pages#index"
 
 end

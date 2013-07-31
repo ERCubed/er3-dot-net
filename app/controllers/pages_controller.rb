@@ -1,12 +1,32 @@
 class PagesController < ApplicationController
   
   def index
-    #@users = User.all
+    @users = User.all
   end
   
   def resume
     @companies = Company.order("end_date DESC")
     @tasks = Task.all
+  end
+  
+  def languages
+    
+  end
+  
+  def othersites
+    
+  end
+
+  def about
+    @tweets = Twitter.user_timeline("ercubed")[0..4]
+    @twuser = Twitter.user("ercubed")
+    @pp_tweets = Twitter.user_timeline("PastorPrime")[0..4]
+    @pp_twuser = Twitter.user("PastorPrime")
+  end
+
+  def contact
+    @contact = ContactUs.new
+
   end
   
   def tumblr
