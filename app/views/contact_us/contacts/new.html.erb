@@ -1,4 +1,4 @@
-<h2><%= t('.contact_us') %></h2>
+<h2>Contact</h2>
 <%= form_for @contact, :url => contacts_path, :html => {:class => 'formtastic'} do |f| %>
   <% if ContactUs.require_name %>
     <li class='string required' id='contact_us_contact_name_input'>

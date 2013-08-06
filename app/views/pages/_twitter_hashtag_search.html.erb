@@ -1,0 +1,32 @@
+<b>And a hashtag search...</b>
+
+<%= form_for(about_path, :method => 'get') do |f| %>
+	<%= f.text_field :q, :value => params["q"] %>
+	<%= submit_tag 'Submit' %>
+<% end %>
+
+
+<% if @thashtags.present? %>
+
+	<% @thashtags.each do |tweet| %>
+
+		<p>
+			<img src="<%= tweet.user.profile_image_url %>" valign="top"> <%= tweet.user.name %> (<a href="http://twitter.com/<%= tweet.user.screen_name %>" target="_blank"><%= tweet.user.screen_name %></a>): 
+			<br /><%= auto_link(tweet.text) %>
+		</p>
+		<p>
+			<% if  tweet.hashtags.size > 0 %>
+			<i>Tags: 
+			<% tweet.hashtags.each do |hashtag| %>
+				<a href="about?q=<%= hashtag.text %>">#<%= hashtag.text %></a>&nbsp;
+			<% end %>
+			</i>
+			<% end %>
+		</p>
+		
+
+	<% end %>
+
+<% else %>
+	Unable to connnect to Twitter at this time...
+<% end %>

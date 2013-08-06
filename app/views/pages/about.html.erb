@@ -11,16 +11,20 @@
 </div>
 
 <div class="row">
-	<div class="span4">
-		<%= link_to "Contact Eric", contact_path %>
+	<div class="span3">
+		<p>
+			<%= link_to "Contact Eric", contact_us_path %>
+		</p>
+		<p>
+			<a href="https://twitter.com/intent/tweet?button_hashtag=ERCubedDev&text=Holla Back" class="twitter-hashtag-button" data-related="PastorPrime,ERCubed">Tweet #ERCubedDev</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+		</p>
 	</div>
-	<div class="span3 ">
+	<div class="span4 well">
 		<%= render 'twitter_feed' %>
 	</div>
-	<div class="span1"></div>
-	<div class="span3">
-		<a href="https://twitter.com/intent/tweet?button_hashtag=ERCubedDev&text=Holla Back" class="twitter-hashtag-button" data-related="PastorPrime,ERCubed">Tweet #ERCubedDev</a>
-		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	<div class="span4 well">
+		<%= render 'twitter_hashtag_search' %>
 	</div>
 	
 </div>

@@ -22,10 +22,16 @@ class PagesController < ApplicationController
     @twuser = Twitter.user("ercubed")
     @pp_tweets = Twitter.user_timeline("PastorPrime")[0..4]
     @pp_twuser = Twitter.user("PastorPrime")
+    if params["q"].nil? 
+      params["q"] = "photooftheday"
+    end
+    @thashtags = Twitter.search('#'+params["q"]).statuses[0..9]
+
   end
 
   def contact
-    @contact = ContactUs.new
+    #@contact = ContactUs.new
+    @contact = ContactUs::Contact.new
 
   end
   

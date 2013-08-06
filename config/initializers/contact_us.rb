@@ -6,10 +6,10 @@ ContactUs.setup do |config|
   # Configure the e-mail address which email notifications should be sent from.  If emails must be sent from a verified email address you may set it here.
   # Example:
   # config.mailer_from = "contact@please-change-me.com"
-  config.mailer_from = nil
+  config.mailer_from = "donotreply@ercubed.com"
 
   # Configure the e-mail address which should receive the contact form email notifications.
-  config.mailer_to = "contact@please-change-me.com"
+  config.mailer_to = "eric@ercubed.com"
 
   # ==> Form Configuration
 
@@ -22,6 +22,6 @@ ContactUs.setup do |config|
   # Configure the form gem to use.
   # Example:
   # config.form_gem = 'formtastic
-  config.form_gem = nil
+  config.form_gem = 'simple_form'
 
 end

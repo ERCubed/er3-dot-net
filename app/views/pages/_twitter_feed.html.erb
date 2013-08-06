@@ -4,25 +4,27 @@
 
 	<% @tweets.each do |tweet| %>
 
-		<p><%= auto_link(tweet.text) %></p>
+		<p>
+			<%= auto_link(tweet.text) %>
+		</p>
 		<p>
 			<% if  tweet.hashtags.size > 0 %>
 			<i>Tags: 
 			<% tweet.hashtags.each do |hashtag| %>
-				#<%= hashtag.text %>&nbsp;
+				<a href="about?q=<%= hashtag.text %>">#<%= hashtag.text %></a>&nbsp;
 			<% end %>
 			</i>
 			<% end %>
 		</p>
 		
-
 	<% end %>
 
 <% else %>
 	Unable to connnect to Twitter at this time...
 <% end %>
 
-<p></p>
+<p>&nbsp;</p>
+
 <h4>And ERCubed's alter ego...</h4>
 <% if @pp_tweets.present? %>
 
@@ -41,7 +43,6 @@
 			<% end %>
 		</p>
 		
-
 	<% end %>
 
 <% else %>
