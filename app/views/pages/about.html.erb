@@ -1,29 +1,39 @@
 <h1>About</h1>
 
 <div class="row">
-	<div class="span8 well">
-		So, just who is this Eric guy anyway?
-	</div>
-	<div class="span3 well">
-		Maybe a picture?
+	<div class="span10 well">
+		<div class="media">
+			<%= image_tag("me.jpg", size: "135x180", class: "media-object pull-left") %>
+		
+			<div class="media-body">
+			
+				<b>So, just who is this Eric guy anyway?</b>
+				<br /><br />
+				It's rather simple really. He's a software and solutions architect with numerous years under his belt in Ruby and PHP. He is also a certified Scrum Master who is more comfortable around agile methodolgies than a narcoleptic at a matress sale. Given his broad breadth of , it is no wonder that Eric has worked on e-commerce sites for Fortune 100 companies, content management for agencies and large lobbies, and Dallas' premier antique silver shop. 
+				<br /><br />
+				Of course, Eric isn't all just computers and software. He's got a creative side too. You can find more about that at <%= link_to "ERCubed.com", "http://www.ercubed.com", :target => "_blank" %>
+			</div>
+		
+		</div>
+
 	</div>
 	
 </div>
 
 <div class="row">
-	<div class="span3">
+	<div class="span2">
 		<p>
-			<%= link_to "Contact Eric", contact_us_path %>
+			<%= link_to "Contact Eric", contact_us_path, :class => "btn btn-default" %>
 		</p>
 		<p>
 			<a href="https://twitter.com/intent/tweet?button_hashtag=ERCubedDev&text=Holla Back" class="twitter-hashtag-button" data-related="PastorPrime,ERCubed">Tweet #ERCubedDev</a>
 			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 		</p>
 	</div>
-	<div class="span4 well">
+	<div class="span4 well well-small">
 		<%= render 'twitter_feed' %>
 	</div>
-	<div class="span4 well">
+	<div class="span4 well well-small">
 		<%= render 'twitter_hashtag_search' %>
 	</div>
 	
